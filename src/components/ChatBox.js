@@ -2,11 +2,12 @@ import React from 'react';
 
 function ChatBox(props) {
     async function completeFetch(message) {
+        const apiKey = '';
         const requestOptions = {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + "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",
+                'Authorization': 'Bearer ' + apiKey,
             },
             body: JSON.stringify({
                 "prompt": message,
