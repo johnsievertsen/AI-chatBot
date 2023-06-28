@@ -3,7 +3,6 @@ import React from 'react';
 function ChatBox(props) {
     async function completeFetch(message) {
         const apiKey = process.env.REACT_APP_API_KEY;
-        console.log(apiKey);
         const requestOptions = {
             method: 'POST',
             headers: { 
@@ -15,7 +14,7 @@ function ChatBox(props) {
                 "max_tokens": 300,
             })
         };
-        fetch("https://api.openai.com/v1/engines/davinci/completions", requestOptions)
+        fetch("https://api.openai.com/v1/engines/text-davinci-003/completions", requestOptions)
             .then(response => response.json())
             .then(data => props.setResponse(data.choices[0].text))
             .catch(error => console.log('error', error));
