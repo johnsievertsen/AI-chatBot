@@ -2,7 +2,8 @@ import React from 'react';
 
 function ChatBox(props) {
     async function completeFetch(message) {
-        const apiKey = '';
+        const apiKey = process.env.REACT_APP_API_KEY;
+        console.log(apiKey);
         const requestOptions = {
             method: 'POST',
             headers: { 
